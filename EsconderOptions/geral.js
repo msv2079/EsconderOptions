@@ -9,6 +9,8 @@ var TipoPessoa = (function () {
 
             $("#tipo-pessoa-opcoes option").not("[value^='" + tipoPessoa + "op']").hide();
             $("#tipo-pessoa-opcoes option[value^='" + tipoPessoa + "op']").show();
+            $("#OptionDefault").show();
+            $("#OptionDefault").prop("selected", true);
         }
     }
 })();
