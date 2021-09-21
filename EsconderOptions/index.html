@@ -4,15 +4,7 @@
 
     <head>
         <meta charset="utf-8">
-        <style>
-            .hide {
-                display: none;
-            }
-
-            .show {
-                display: block;
-            }
-        </style>
+        <link rel="stylesheet" href="geral.css">
     </head>
     Tipo de Pessoa
     <select id="tipo-pessoa" onchange="CarregarOpcoes(this)">
@@ -29,17 +21,5 @@
         <option class="hide" value="pjop1">PJ Opcao 1</option>
         <option class="hide" value="pjop2">PJ Opcao 2</option>
     </select>
-    <script>
-        function CarregarOpcoes(elem) {
-            var tipoPessoa = elem.value.toLowerCase();
-            var opcoes = document.getElementById("tipo-pessoa-opcoes").getElementsByTagName("option");
-
-            var isPF = tipoPessoa == "pf";
-
-            opcoes[1].className = isPF ? "show" : "hide";
-            opcoes[2].className = isPF ? "show" : "hide";
-            opcoes[3].className = isPF ? "hide" : "show";
-            opcoes[4].className = isPF ? "hide" : "show";
-        }
-    </script>
+    <script src="geral.js"></script>
 </body>
