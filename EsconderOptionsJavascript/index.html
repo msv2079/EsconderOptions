@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<body>
+
+    <head>
+        <meta charset="utf-8">
+    </head>
+    Tipo de Pessoa
+    <select id="tipo-pessoa" onchange="CarregarOpcoes(this)">
+        <option>...</option>
+        <option value="PF">PF</option>
+        <option value="PJ">PJ</option>
+    </select>
+    <hr>
+    Opções
+    <select id="tipo-pessoa-opcoes">
+        <option class="show" value="visible">...</option>
+        <option class="hide" value="pfop1">PF Opcao 1</option>
+        <option class="hide" value="pfop2">PF Opcao 2</option>
+        <option class="hide" value="pjop1">PJ Opcao 1</option>
+        <option class="hide" value="pjop2">PJ Opcao 2</option>
+    </select>
+    <script>
+        function CarregarOpcoes(elem) {
+            var tipoPessoa = elem.value.toLowerCase();
+            var opcoes = document.getElementById("tipo-pessoa-opcoes").getElementsByTagName("option");
+
+            for (var x = 0; x < opcoes.length; x++) {
+                if (opcoes[x].value != "visible" && !opcoes[x].value.startsWith(tipoPessoa)) {
+                    opcoes[x].style.display = "none";
+                }
+                else {
+                    opcoes[x].style.display = "block";
+                }
+            }
+        }
+    </script>
+</body>
