@@ -25,13 +25,17 @@
             var tipoPessoa = elem.value.toLowerCase();
             var opcoes = document.getElementById("tipo-pessoa-opcoes").getElementsByTagName("option");
 
-            for (var x = 0; x < opcoes.length; x++) {
-                if (opcoes[x].value != "visible" && !opcoes[x].value.startsWith(tipoPessoa)) {
-                    opcoes[x].style.display = "none";
-                }
-                else {
-                    opcoes[x].style.display = "block";
-                }
+            if (tipoPessoa == "pf") {
+                opcoes[1].style.display = "block";
+                opcoes[2].style.display = "block";
+                opcoes[3].style.display = "none";
+                opcoes[4].style.display = "none";
+            }
+            else if (tipoPessoa == "pj") {
+                opcoes[1].style.display = "none";
+                opcoes[2].style.display = "none";
+                opcoes[3].style.display = "block";
+                opcoes[4].style.display = "block";
             }
         }
     </script>
