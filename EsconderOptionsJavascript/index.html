@@ -4,6 +4,15 @@
 
     <head>
         <meta charset="utf-8">
+        <style>
+            .hide {
+                display: none;
+            }
+
+            .show {
+                display: block;
+            }
+        </style>
     </head>
     Tipo de Pessoa
     <select id="tipo-pessoa" onchange="CarregarOpcoes(this)">
@@ -26,16 +35,16 @@
             var opcoes = document.getElementById("tipo-pessoa-opcoes").getElementsByTagName("option");
 
             if (tipoPessoa == "pf") {
-                opcoes[1].style.display = "block";
-                opcoes[2].style.display = "block";
-                opcoes[3].style.display = "none";
-                opcoes[4].style.display = "none";
+                opcoes[1].className = "show";
+                opcoes[2].className = "show";
+                opcoes[3].className = "hide";
+                opcoes[4].className = "hide";
             }
             else {
-                opcoes[1].style.display = "none";
-                opcoes[2].style.display = "none";
-                opcoes[3].style.display = "block";
-                opcoes[4].style.display = "block";
+                opcoes[1].className = "hide";
+                opcoes[2].className = "hide";
+                opcoes[3].className = "show";
+                opcoes[4].className = "show";
             }
         }
     </script>
